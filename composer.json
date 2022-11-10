@@ -1,0 +1,19 @@
+{
+    "name": "teamnovu/statamic-images-missing-alt",
+    "autoload": {
+        "psr-4": {
+            "Teamnovu\\StatamicImagesMissingAlt\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Images Missing Alt",
+            "description": "Statamic Images Missing Alt addon"
+        },
+        "laravel": {
+            "providers": [
+                "Teamnovu\\StatamicImagesMissingAlt\\ServiceProvider"
+            ]
+        }
+    }
+}
