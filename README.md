@@ -2,15 +2,11 @@
 
 > This is an addon to list all images with no alt text on your Statamic control panel.
 
-## Credit
-
-This widget has basically been extracted from the [peak starter kit](https://github.com/studio1902/statamic-peak).
-
-A more serious solution to having alt texts on every asset is tracked and discussed in [this issue](https://github.com/statamic/ideas/issues/496).
-
 ## Features
 
 This addon adds a widget which you can add to your control panel. If there are images which do not have an alt text they will be listed in that widget.
+
+Having alt text on every asset improves accessibility as well as search engine optimization.
 
 ## How to Install
 
@@ -35,3 +31,9 @@ The following is an example which shows all the possible config values you can u
     'width' => 50, // Default: 100 – The size of the widget.
 ],
 ```
+
+## Credit
+
+This widget has basically been extracted from the [peak starter kit](https://github.com/studio1902/statamic-peak).
+
+A more serious solution to having alt texts on every asset is tracked and discussed in [this issue](https://github.com/statamic/ideas/issues/496).
