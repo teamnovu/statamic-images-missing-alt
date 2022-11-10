@@ -1,16 +1,16 @@
 # Statamic Images Missing Alt
 
-> This is an addon to list all images with no alt text on your Statamic control panel.
+> This is an addon to list all images with no alt text on your Statamic dashboard.
 
 ## Features
 
-This addon adds a widget which you can add to your control panel. If there are images which do not have an alt text they will be listed in that widget.
+This addon adds a widget which you can add to your dashboard. If there are images which do not have an alt text they will be listed in that widget.
 
 Having alt text on every asset improves accessibility as well as search engine optimization.
 
 ## How to Install
 
-You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
+You can search for this addon in the `Tools > Addons` section of the Statamic dashboard and click **install**, or run the following command from your project root:
 
 ``` bash
 composer require teamnovu/statamic-images-missing-alt
