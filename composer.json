@@ -1,14 +1,23 @@
 {
     "name": "teamnovu/statamic-images-missing-alt",
+    "description": "Addon to list all images with no alt text on your Statamic dashboard.",
     "autoload": {
         "psr-4": {
             "Teamnovu\\StatamicImagesMissingAlt\\": "src"
         }
     },
+    "authors": [
+        {
+            "name": "Tom Diggelmann"
+        }
+    ],
+    "support": {
+        "email": "developers@novu.ch"
+    },
     "extra": {
         "statamic": {
             "name": "Statamic Images Missing Alt",
-            "description": "Statamic Images Missing Alt addon"
+            "description": "Addon to list all images with no alt text on your Statamic dashboard."
         },
         "laravel": {
             "providers": [
