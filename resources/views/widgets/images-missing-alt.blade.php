@@ -12,6 +12,8 @@
     <div class="content p-2">
         <p>
             {{ __('statamic-images-missing-alt::images-missing-alt.explanation') }}
+        </p>
+        <p>
             {{ trans_choice('statamic-images-missing-alt::images-missing-alt.count', $amount, ['amount' => $amount]) }}
         </p>
     </div>
