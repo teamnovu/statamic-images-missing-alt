@@ -5,14 +5,14 @@
                 <div class="h-6 w-6 mr-1 text-grey-80">
                     @cp_svg('assets')
                 </div>
-                <span>{{ __('strings.widget_assets_title', ['container' => $container]) }}</span>
+                <span>{{ __('statamic-images-missing-alt::images-missing-alt.title', ['container' => $container]) }}</span>
             </div>
         </h2>
     </div>
     <div class="content p-2">
         <p>
-            {{ __('strings.widget_assets_explanation') }}
-            {{ trans_choice('strings.widget_assets_count', $amount, ['amount' => $amount]) }}
+            {{ __('statamic-images-missing-alt::images-missing-alt.explanation') }}
+            {{ trans_choice('statamic-images-missing-alt::images-missing-alt.count', $amount, ['amount' => $amount]) }}
         </p>
     </div>
 
@@ -25,14 +25,14 @@
             <td>
                 <div class="flex items-center">
                     <div class="little-dot mr-1 bg-red"></div>
-                    <a href="{{ $asset['edit_url'] }}" aria-label="{{ __('strings.widget_assets_edit') }}">{{ $asset['basename'] }}</a>
+                    <a href="{{ $asset['edit_url'] }}" aria-label="{{ __('statamic-images-missing-alt::images-missing-alt.edit') }}">{{ $asset['basename'] }}</a>
                 </div>
             </td>
             <td class="actions-column"></td>
         </tr>
     @empty
         <div class="content p-2">
-            <p>{{ __('strings.widget_assets_done') }}</p>
+            <p>{{ __('statamic-images-missing-alt::images-missing-alt.done') }}</p>
         </div>
     @endforelse
     @if ($assets)
