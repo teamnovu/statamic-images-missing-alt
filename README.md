@@ -1,14 +1,16 @@
 # Statamic Images Missing Alt
 
-> Statamic Images Missing Alt is a Statamic addon that does something pretty neat.
+> This is an addon to list all images with no alt text on your Statamic control panel.
+
+## Credit
+
+This widget has basically been extracted from the [peak starter kit](https://github.com/studio1902/statamic-peak).
+
+A more serious solution to having alt texts on every asset is tracked and discussed in [this issue](https://github.com/statamic/ideas/issues/496).
 
 ## Features
 
-This addon does:
-
-- This
-- And this
-- And even this
+This addon adds a widget which you can add to your control panel. If there are images which do not have an alt text they will be listed in that widget.
 
 ## How to Install
 
@@ -20,4 +22,16 @@ composer require teamnovu/statamic-images-missing-alt
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
+Just add the widget to your `config/statamic/cp.php` as you would [any other widget](https://statamic.dev/widgets#configuration).
+
+The following is an example which shows all the possible config values you can use.
+
+```php
+[
+    'type' => 'images_missing_alt', // Required
+    'container' => 'assets', // Default: "assets" – The container to search through.
+    'limit' => 5, // Default: 5 – The number of images to display in the widget.
+    'expiry' => 30, // Default: 0 – The number of seconds to cache the list of images with no alt text for.
+    'width' => 50, // Default: 100 – The size of the widget.
+],
+```
