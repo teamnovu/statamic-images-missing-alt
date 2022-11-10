@@ -24,5 +24,13 @@
                 "Teamnovu\\StatamicImagesMissingAlt\\ServiceProvider"
             ]
         }
+    },
+    "require": {
+        "statamic/cms": "^3.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
     }
 }
