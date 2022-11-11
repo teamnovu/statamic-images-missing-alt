@@ -24,6 +24,7 @@ class Service
             function () use ($container) {
                 return Asset::query()
                     ->where('container', $container)
+                    ->where('is_image', true)
                     ->whereNull('alt')
                     ->orderBy('last_modified', 'desc')
                     ->limit(100)
