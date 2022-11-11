@@ -18,16 +18,21 @@ class ImagesMissingAlt extends Widget
     public function html()
     {
         $expiration = Carbon::now()->addSeconds($this->config('expiry', 0));
+        $container = $this->config('container', 'assets');
 
-        $assets = Cache::remember('widgets::StatamicImagesMissingAlt', $expiration, function() {
-            return Asset::query()
-                ->where('container', $this->config('container', 'assets'))
-                ->whereNull('alt')
-                ->orderBy('last_modified', 'desc')
-                ->limit(100)
-                ->get()
-                ->toAugmentedArray();
-        });
+        $assets = Cache::remember(
+            "widgets::StatamicImagesMissingAlt.{$container}",
+            $expiration,
+            function() use ($container) {
+                return Asset::query()
+                    ->where('container', $container)
+                    ->whereNull('alt')
+                    ->orderBy('last_modified', 'desc')
+                    ->limit(100)
+                    ->get()
+                    ->toAugmentedArray();
+            },
+        );
 
         $assets = collect($assets);
 
