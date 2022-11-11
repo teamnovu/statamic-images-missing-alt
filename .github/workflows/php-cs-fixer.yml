@@ -1,10 +1,10 @@
-name: fix-code-style
+name: Check & fix styling
 
-on: push
+on: [push]
 
 jobs:
   php-cs-fixer:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Cancel Previous Runs
@@ -18,8 +18,9 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Run PHP CS Fixer
-        run: |
-          php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes
+        uses: docker://oskarstark/php-cs-fixer-ga
+        with:
+          args: --config=.php-cs-fixer.dist.php --allow-risky=yes
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
