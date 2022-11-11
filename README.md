@@ -23,11 +23,15 @@ Just add the widget to your `config/statamic/cp.php` as you would [any other wid
 The following is an example which shows all the possible config values you can use.
 
 ```php
-[
-    'type' => 'images_missing_alt', // Required
-    'container' => 'assets', // Default: "assets" – The container to search through.
-    'limit' => 5, // Default: 5 – The number of images to display in the widget.
-    'width' => 50, // Default: 100 – The size of the widget.
+'widgets' => [
+    // ...
+
+    [
+        'type' => 'images_missing_alt', // Required
+        'container' => 'assets', // Default: "assets" – The container to search through.
+        'limit' => 5, // Default: 5 – The number of images to display in the widget.
+        'width' => 50, // Default: 100 – The size of the widget.
+    ],
 ],
 ```
 
