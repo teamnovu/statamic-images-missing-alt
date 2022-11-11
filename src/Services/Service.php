@@ -20,16 +20,16 @@ class Service
     public function getImagesWithMissingAlt(string $container): array
     {
         return Cache::rememberForever(
-          $this->getCacheKey($container),
-          function() use ($container) {
-              return Asset::query()
-                  ->where('container', $container)
-                  ->whereNull('alt')
-                  ->orderBy('last_modified', 'desc')
-                  ->limit(100)
-                  ->get()
-                  ->toAugmentedArray();
-          },
+            $this->getCacheKey($container),
+            function() use ($container) {
+                return Asset::query()
+                    ->where('container', $container)
+                    ->whereNull('alt')
+                    ->orderBy('last_modified', 'desc')
+                    ->limit(100)
+                    ->get()
+                    ->toAugmentedArray();
+            },
       );
     }
 
