@@ -27,10 +27,13 @@ The following is an example which shows all the possible config values you can u
     'type' => 'images_missing_alt', // Required
     'container' => 'assets', // Default: "assets" – The container to search through.
     'limit' => 5, // Default: 5 – The number of images to display in the widget.
-    'expiry' => 30, // Default: 0 – The number of seconds to cache the list of images with no alt text for.
     'width' => 50, // Default: 100 – The size of the widget.
 ],
 ```
+
+> **Note**
+> Unlike in the Statamic Peak starter kit, this widget caches the assets displayed forever and
+> updates the cache when events such as AssetDeleted, AssetSaved or AssetUploaded are fired.
 
 ## Credit
 
