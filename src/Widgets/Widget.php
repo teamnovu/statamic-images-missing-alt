@@ -23,12 +23,19 @@ class Widget extends BaseWidget
     {
         $container = $this->config('container', 'assets');
 
-        $assets = collect($this->service->getImagesWithMissingAlt($container));
+        $containers = collect(is_array($container) ? $container : [$container]);
+
+        $assets = $containers->reduce(
+            fn ($assets, $container) => $assets->merge($this->service->getImagesWithMissingAlt($container)),
+            collect(),
+        );
+
+        $assets = $assets->sortByDesc('last_modified')->values();
 
         return view('statamic-images-missing-alt::widgets.images-missing-alt', [
             'assets' => $assets->slice(0, $this->config('limit', 5)),
             'amount' => $assets->count(),
-            'container' => AssetContainer::findByHandle($container)->title(),
+            'containers' => $containers->map(fn (string $container) => AssetContainer::findByHandle($container)->title()),
         ]);
     }
 }

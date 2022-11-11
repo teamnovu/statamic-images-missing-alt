@@ -5,7 +5,11 @@
                 <div class="h-6 w-6 mr-1 text-grey-80">
                     @cp_svg('assets')
                 </div>
-                <span>{{ __('statamic-images-missing-alt::images-missing-alt.title', ['container' => $container]) }}</span>
+                @if (count($containers) === 1)
+                    <span>{{ __('statamic-images-missing-alt::images-missing-alt.title-for-container', ['container' => $containers[0]]) }}</span>
+                @else
+                    <span>{{ __('statamic-images-missing-alt::images-missing-alt.title') }}</span>
+                @endif
             </div>
         </h2>
     </div>
