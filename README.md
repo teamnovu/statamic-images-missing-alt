@@ -34,6 +34,6 @@ The following is an example which shows all the possible config values you can u
 
 ## Credit
 
-This widget has basically been extracted from the [peak starter kit](https://github.com/studio1902/statamic-peak).
+This widget has basically been extracted from the [Statamic Peak starter kit](https://github.com/studio1902/statamic-peak).
 
 A more serious solution to having alt texts on every asset is tracked and discussed in [this issue](https://github.com/statamic/ideas/issues/496).
