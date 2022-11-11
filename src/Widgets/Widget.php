@@ -2,8 +2,8 @@
 
 namespace Teamnovu\StatamicImagesMissingAlt\Widgets;
 
+use Statamic\Facades\AssetContainer;
 use Statamic\Widgets\Widget as BaseWidget;
-use \Statamic\Facades\AssetContainer;
 
 class Widget extends BaseWidget
 {
@@ -11,7 +11,8 @@ class Widget extends BaseWidget
 
     public function __construct(
         protected \Teamnovu\StatamicImagesMissingAlt\Services\Service $service,
-    ) {}
+    ) {
+    }
 
     /**
      * The HTML that should be shown in the widget.

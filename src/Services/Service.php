@@ -21,7 +21,7 @@ class Service
     {
         return Cache::rememberForever(
             $this->getCacheKey($container),
-            function() use ($container) {
+            function () use ($container) {
                 return Asset::query()
                     ->where('container', $container)
                     ->whereNull('alt')
@@ -30,7 +30,7 @@ class Service
                     ->get()
                     ->toAugmentedArray();
             },
-      );
+        );
     }
 
     public function preloadCache(string $container): void
@@ -38,4 +38,3 @@ class Service
         $this->getImagesWithMissingAlt($container);
     }
 }
-

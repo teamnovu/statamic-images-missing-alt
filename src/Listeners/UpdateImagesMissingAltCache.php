@@ -12,7 +12,7 @@ use Statamic\Events\AssetUploaded;
 class UpdateImagesMissingAltCache implements ShouldQueue
 {
     use Queueable;
-    
+
     /**
      * Create the event listener.
      *
@@ -20,7 +20,8 @@ class UpdateImagesMissingAltCache implements ShouldQueue
      */
     public function __construct(
         protected \Teamnovu\StatamicImagesMissingAlt\Services\Service $service,
-    ) {}
+    ) {
+    }
 
     /**
      * Handle the event.

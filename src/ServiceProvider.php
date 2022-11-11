@@ -21,7 +21,7 @@ class ServiceProvider extends AddonServiceProvider
             UpdateImagesMissingAltCache::class,
         ],
     ];
-    
+
     protected $widgets = [
         \Teamnovu\StatamicImagesMissingAlt\Widgets\Widget::class,
     ];
