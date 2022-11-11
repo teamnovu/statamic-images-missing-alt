@@ -1,0 +1,27 @@
+name: fix-code-style
+
+on: push
+
+jobs:
+  php-cs-fixer:
+    runs-on: self-hosted
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Run PHP CS Fixer
+        run: |
+          php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix styling 💄
