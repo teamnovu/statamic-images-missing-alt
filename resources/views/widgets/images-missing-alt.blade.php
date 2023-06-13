@@ -1,5 +1,5 @@
 <div class="card p-0 overflow-hidden h-full">
-    <div class="flex justify-between items-center pt-2 px-2">
+    <div class="flex justify-between items-center py-4 px-4">
         <h2>
             <div class="flex items-center">
                 <div class="h-6 w-6 mr-1 text-gray-800">
@@ -13,7 +13,7 @@
             </div>
         </h2>
     </div>
-    <div class="content p-2">
+    <div class="content px-4 pb-2">
         <p>
             {{ __('statamic-images-missing-alt::images-missing-alt.explanation') }}
         </p>
@@ -37,7 +37,7 @@
             <td class="actions-column"></td>
         </tr>
     @empty
-        <div class="content p-2">
+        <div class="content p-4">
             <p>{{ __('statamic-images-missing-alt::images-missing-alt.done') }}</p>
         </div>
     @endforelse
