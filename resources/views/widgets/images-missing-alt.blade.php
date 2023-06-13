@@ -2,8 +2,8 @@
     <div class="flex justify-between items-center pt-2 px-2">
         <h2>
             <div class="flex items-center">
-                <div class="h-6 w-6 mr-1 text-grey-80">
-                    @cp_svg('assets')
+                <div class="h-6 w-6 mr-1 text-gray-800">
+                    @cp_svg('icons/light/assets')
                 </div>
                 @if (count($containers) === 1)
                     <span>{{ __('statamic-images-missing-alt::images-missing-alt.title-for-container', ['container' => $containers[0]]) }}</span>
@@ -17,7 +17,7 @@
         <p>
             {{ __('statamic-images-missing-alt::images-missing-alt.explanation') }}
         </p>
-        <p>
+        <p class="font-bold">
             {{ trans_choice('statamic-images-missing-alt::images-missing-alt.count', $amount, ['amount' => $amount]) }}
         </p>
     </div>
@@ -30,7 +30,7 @@
         <tr class="sortable-row outline-none" tabindex="0">
             <td>
                 <div class="flex items-center">
-                    <div class="little-dot mr-1 bg-red"></div>
+                    <div class="little-dot mr-2 bg-red-500"></div>
                     <a href="{{ $asset['edit_url'] }}" aria-label="{{ __('statamic-images-missing-alt::images-missing-alt.edit') }}">{{ $asset['basename'] }}</a>
                 </div>
             </td>
