@@ -2,7 +2,6 @@
 
 namespace Teamnovu\StatamicImagesMissingAlt\Jobs;
 
-use Statamic\Assets\Asset;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUniqueUntilProcessing;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -10,6 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
 use Illuminate\Queue\SerializesModels;
+use Statamic\Assets\Asset;
 
 class UpdateMissingAltCacheJob implements ShouldQueue, ShouldBeUniqueUntilProcessing
 {
@@ -19,6 +19,7 @@ class UpdateMissingAltCacheJob implements ShouldQueue, ShouldBeUniqueUntilProces
     use SerializesModels;
 
     public $tries = 2;
+
     protected $event;
 
     /**
