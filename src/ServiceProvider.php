@@ -2,24 +2,13 @@
 
 namespace Teamnovu\StatamicImagesMissingAlt;
 
-use Statamic\Events\AssetDeleted;
-use Statamic\Events\AssetSaved;
-use Statamic\Events\AssetUploaded;
 use Statamic\Providers\AddonServiceProvider;
-use Teamnovu\StatamicImagesMissingAlt\Listeners\UpdateImagesMissingAltCache;
+use Teamnovu\StatamicImagesMissingAlt\Listeners\UpdateImagesMissingAltCacheListener;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    protected $listen = [
-        AssetDeleted::class => [
-            UpdateImagesMissingAltCache::class,
-        ],
-        AssetSaved::class => [
-            UpdateImagesMissingAltCache::class,
-        ],
-        AssetUploaded::class => [
-            UpdateImagesMissingAltCache::class,
-        ],
+    protected $subscribe = [
+        UpdateImagesMissingAltCacheListener::class,
     ];
 
     protected $widgets = [
