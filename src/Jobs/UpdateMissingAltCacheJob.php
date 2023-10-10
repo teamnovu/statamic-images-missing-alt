@@ -58,6 +58,7 @@ class UpdateMissingAltCacheJob implements ShouldQueue, ShouldBeUniqueUntilProces
     {
         /** @var Asset $asset */
         $asset = $this->event->asset;
+
         return $asset->container()->handle();
     }
 }
