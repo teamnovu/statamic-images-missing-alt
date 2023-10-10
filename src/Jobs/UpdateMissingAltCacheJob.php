@@ -32,12 +32,8 @@ class UpdateMissingAltCacheJob implements ShouldQueue, ShouldBeUniqueUntilProces
 
     public function handle(\Teamnovu\StatamicImagesMissingAlt\Services\Service $service)
     {
-        /** @var Asset $asset */
-        $asset = $this->event->asset;
-        $container = $asset->container();
-
-        $service->clearCache($container->handle());
-        $service->preloadCache($container->handle());
+        $service->clearCache($this->getAssetContainerHandle());
+        $service->preloadCache($this->getAssetContainerHandle());
     }
 
     /**
@@ -47,6 +43,21 @@ class UpdateMissingAltCacheJob implements ShouldQueue, ShouldBeUniqueUntilProces
      */
     public function middleware()
     {
-        return [(new WithoutOverlapping())->releaseAfter(60)->expireAfter(180)];
+        return [(new WithoutOverlapping($this->getAssetContainerHandle()))->releaseAfter(60)->expireAfter(180)];
+    }
+
+    /**
+     * Get the unique ID for the job.
+     */
+    public function uniqueId(): string
+    {
+        return $this->getAssetContainerHandle();
+    }
+
+    private function getAssetContainerHandle(): string
+    {
+        /** @var Asset $asset */
+        $asset = $this->event->asset;
+        return $asset->container()->handle();
     }
 }
