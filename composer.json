@@ -1,7 +1,7 @@
 {
     "name": "teamnovu/statamic-images-missing-alt",
     "description": "Addon to list all images with no alt text on your Statamic dashboard.",
-    "license": "GPL",
+    "license": "GPL-3.0-only",
     "autoload": {
         "psr-4": {
             "Teamnovu\\StatamicImagesMissingAlt\\": "src"
