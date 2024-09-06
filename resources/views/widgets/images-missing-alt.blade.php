@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center py-4 px-4">
         <h2>
             <div class="flex items-center">
-                <div class="h-6 w-6 mr-1 text-gray-800">
+                <div class="h-6 w-6 rtl:ml-2 ltr:mr-2 text-gray-800 dark:text-dark-200">
                     @cp_svg('icons/light/assets')
                 </div>
                 @if (count($containers) === 1)
