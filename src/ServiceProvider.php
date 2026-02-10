@@ -15,6 +15,13 @@ class ServiceProvider extends AddonServiceProvider
         \Teamnovu\StatamicImagesMissingAlt\Widgets\Widget::class,
     ];
 
+    protected $vite = [
+        'input' => [
+            'resources/css/addon.css',
+        ],
+        'publicDirectory' => 'resources/dist',
+    ];
+
     public function bootAddon()
     {
         //
