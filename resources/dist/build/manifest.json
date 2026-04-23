@@ -1,0 +1,11 @@
+{
+  "resources/css/addon.css": {
+    "file": "assets/addon-BeHqAMS5.css",
+    "src": "resources/css/addon.css",
+    "isEntry": true,
+    "name": "addon",
+    "names": [
+      "addon.css"
+    ]
+  }
+}
