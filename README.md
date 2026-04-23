@@ -8,6 +8,13 @@ This addon adds a widget which you can add to your dashboard. If there are image
 
 Having alt text on every asset improves accessibility as well as search engine optimization.
 
+## Compatibility
+
+| Package version | Statamic version |
+|-----------------|------------------|
+| 1.x             | 4.x, 5.x         |
+| 2.x             | 6.x              |
+
 ## How to Install
 
 You can search for this addon in the `Tools > Addons` section of the Statamic dashboard and click **install**, or run the following command from your project root:
